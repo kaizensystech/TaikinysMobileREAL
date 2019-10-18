@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.kaizenmax.taikinys_icl">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <application
+        android:name="com.kaizenmax.taikinys_icl.util.App"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name="com.kaizenmax.taikinys_icl.view.DemoL3_InProgressActivity"
+            android:label="@string/title_activity_demo_l3__in_progress"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <activity
+            android:name="com.kaizenmax.taikinys_icl.view.DemoL3Activity_YieldResult"
+            android:label="@string/title_activity_demo_l3__yield_result"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.kaizenmax.taikinys_icl.view.DemoL3_InterimResult"
+            android:label="@string/title_activity_demo_l3__interim_result"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.kaizenmax.taikinys_icl.view.DemoL3Activity_Execution"
+            android:label="@string/title_activity_demo_l3__execution"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.kaizenmax.taikinys_icl.view.DemoL3Activity_Protocol"
+            android:label="@string/title_activity_demo_l3__protocol"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.kaizenmax.taikinys_icl.view.DemoL3Activity"
+            android:label="Demo L3 Activity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.kaizenmax.taikinys_icl.view.MandiCampaignActivity"
+            android:label="@string/title_activity_mandi_campaign"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.kaizenmax.taikinys_icl.view.DiagnosticVisitActivity"
+            android:label="@string/title_activity_diagnostic_visit"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.kaizenmax.taikinys_icl.view.FieldDayActivity"
+            android:label="@string/title_activity_field_day"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.kaizenmax.taikinys_icl.view.IndividualFarmerContactMainActivity"
+            android:label="Individual Farmer Contact"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <activity
+            android:name="com.kaizenmax.taikinys_icl.view.FarmerMeetingActivity"
+            android:label="@string/title_activity_farmer_meeting"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait" />
+
+
+
+        <activity android:name="com.kaizenmax.taikinys_icl.view.WelcomeActivity"
+            android:screenOrientation="portrait"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+
+
+
+        </activity>
+
+
+        <activity android:name="com.kaizenmax.taikinys_icl.view.OtpVerificationActivity"
+            android:screenOrientation="portrait" />
+
+        <service android:name="com.kaizenmax.taikinys_icl.backgroundservices.ExampleService" />
+        <service android:name="com.kaizenmax.taikinys_icl.backgroundservices.DataDownloadService" />
+    </application>
+
+</manifest>

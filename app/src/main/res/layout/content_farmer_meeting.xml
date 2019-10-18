@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:context="com.kaizenmax.taikinys_icl.view.FarmerMeetingActivity"
+        tools:showIn="@layout/app_bar_farmer_meeting">
+
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical">
+
+
+
+        <android.support.v7.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:id="@+id/parent_linear_layout"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_margin="10dp"
+            android:padding="5dp"
+            tools:context=".view.IndividualFarmerContactActivity">
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:id="@+id/dateOfActivity"
+                    android:layout_height="wrap_content"
+                    android:inputType="date"
+
+                    android:hint="Date of Activity*" />
+            </android.support.design.widget.TextInputLayout>
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="fill_parent"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:id="@+id/nooffarmers"
+                        android:maxLength="200"
+                        android:hint="No. Of Farmers" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="fill_parent"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:inputType="number"
+                        android:id="@+id/expenses"
+                        android:maxLength="5"
+                        android:hint="Expenses" />
+                </android.support.design.widget.TextInputLayout>
+
+            </LinearLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="fill_parent"
+                android:layout_weight="1"
+                android:layout_height="wrap_content">
+
+                <AutoCompleteTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textAutoComplete"
+                    android:id="@+id/village"
+                    android:maxLength="200"
+                    android:hint="Village*" />
+            </android.support.design.widget.TextInputLayout>
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/cropCategory"
+                android:spinnerMode="dropdown"
+                >
+            </Spinner>
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:id="@+id/cropFocus"
+                android:layout_marginTop="-10dp"
+                android:spinnerMode="dropdown">
+            </Spinner>
+
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/meetingpurpose"
+                android:layout_marginTop="-10dp"
+                android:spinnerMode="dropdown">
+            </Spinner>
+
+            <com.kaizenmax.taikinysicl2.util.MultiSelectionSpinner
+                android:id="@+id/productFocus"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+
+                />
+
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textMultiLine"
+                    android:lines="8"
+                    android:minLines="1"
+                    android:maxLines="5"
+                    android:maxLength="500"
+                    android:id="@+id/meetinghighlights"
+                    android:imeOptions="actionUnspecified"
+                    android:hint="Meeting Highlights" />
+            </android.support.design.widget.TextInputLayout>
+
+
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/upload"
+                android:text="Select files"
+
+                />
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/filescount"
+                    />
+
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/farmers"
+                android:id="@+id/farmerDetailsText"
+                android:gravity="center_horizontal"
+                android:textColor="#333"
+                />
+
+
+            <Button
+                android:id="@+id/addButtonFarmers"
+                android:layout_width="80dp"
+                android:layout_height="30dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="#3390FF"
+                android:layout_gravity="left"
+
+                android:textColor="#FFF"
+                android:text="Add Row"
+                android:onClick="addFarmerRow"
+                android:textAllCaps="false"
+                android:paddingLeft="5dp"/>
+
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/retailer"
+                android:id="@+id/retailerDetailsText"
+
+                android:gravity="center_horizontal"
+                android:textColor="#333"
+                />
+
+
+
+
+            <Button
+                android:id="@+id/addButton"
+                android:layout_width="80dp"
+                android:layout_height="30dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="#3390FF"
+                android:layout_gravity="left"
+
+                android:textColor="#FFF"
+                android:text="Add Row"
+                android:onClick="addRetailerRow"
+                android:textAllCaps="false"
+                android:paddingLeft="5dp"/>
+
+
+
+
+
+
+            <Button
+                android:layout_width="match_parent"
+                android:background="#228B22"
+                android:id="@+id/saveBtn"
+                android:text="Save"
+                android:textColor="#fff"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_height="wrap_content" />
+
+        </android.support.v7.widget.LinearLayoutCompat>
+
+        <!--  android:onClick="addRetailerRow"-->
+
+    </ScrollView>
+
+
+</android.support.v7.widget.LinearLayoutCompat>

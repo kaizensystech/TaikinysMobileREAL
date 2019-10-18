@@ -1,0 +1,73 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:id="@+id/farmerDetails"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+
+
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <android.support.design.widget.TextInputEditText
+            android:layout_width="330dp"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:id="@+id/farmerName"
+            android:maxLength="200"
+
+
+            android:hint="Farmer Name*" />
+    </android.support.design.widget.TextInputLayout>
+
+
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <android.support.design.widget.TextInputEditText
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+
+                android:inputType="number"
+                android:maxLength="200"
+                android:id="@+id/landacres"
+                android:hint="Land in Acres*" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <android.support.design.widget.TextInputEditText
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:maxLength="10"
+                android:inputType="number"
+
+                android:id="@+id/farmerMobile"
+
+                android:hint="Farmer Mobile*" />
+        </android.support.design.widget.TextInputLayout>
+        <Button
+            android:id="@+id/deleteButton"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="20dp"
+            android:onClick="deleteFarmerRow"
+            android:background="@android:drawable/ic_delete"
+            />
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

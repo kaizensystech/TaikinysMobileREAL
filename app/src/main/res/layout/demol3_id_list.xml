@@ -1,0 +1,61 @@
+<android.support.v7.widget.LinearLayoutCompat android:padding="16dp"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+            <TextView
+                android:id="@+id/tempId"
+                android:text="Demo L3 Temp Id"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                android:textSize="14sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+    <TextView
+        android:id="@+id/dateOfActivityId"
+        android:text="dateOfActivity"
+        android:textSize="12sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+  <!--  <TextView
+        android:id="@+id/lastUpdatedOnId"
+        android:text="Last Updated On"
+        android:textSize="10sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/> -->
+
+    <TextView
+        android:id="@+id/farmerNameId"
+        android:text="Farmer Name"
+        android:textSize="12sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/villageNameId"
+        android:text="Village Name"
+        android:textSize="12sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+
+    <TextView
+                android:id="@+id/permanentId"
+                android:textSize="12sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+
+        </android.support.v7.widget.LinearLayoutCompat>
+

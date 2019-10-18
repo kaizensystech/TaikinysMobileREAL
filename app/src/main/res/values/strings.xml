@@ -1,0 +1,62 @@
+<resources>
+    <string name="app_name">Taikinys-ICL</string>
+    <string name="retailer"> <u>Retailer Details:</u></string>
+    <string name="asteriskred"><font color='#ff0000'>*</font></string>
+    <string name="welcome"><b>Welcome to Taikinys.</b></string>
+    <string name="welcome2"><b>Get started by entering your</b></string>
+    <string name="welcome3"><b>10 digit mobile number.</b></string>
+    <string name="info1">1. Enter your 10 digit mobile number to sign up.</string>
+    <string name="info2">2. Enter OTP received in  your SMS , press "Submit" and start using the application.</string>
+    <string name="info3">3. From the next time, open the application by clicking on the "Taikinys" icon on your phone.</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="ifc">Individual Farmer Contact</string>
+    <string name="title_activity_bottom_navigation_demo">BottomNavigationDemo</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_activity_farmer_meeting">Farmer Meeting</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_tools">Tools</string>
+    <string name="menu_share">Share</string>
+    <string name="menu_send">Send</string>
+    <string name="fm">Farmer Meeting</string>
+    <string name="farmers"><u>Farmer Details:</u></string>
+    <string name="title_activity_individual_farmer_contact_main">
+        IndividualFarmerContactMainActivity
+    </string>
+
+    <string name="title_activity_field_day">Field Day Activity</string>
+    <string name="title_activity_diagnostic_visit">Diagnostic Visit Activity</string>
+    <string name="title_activity_mandi_campaign">Mandi Campaign Activity</string>
+    <string name="title_activity_demo_l3">DemoL3 Activity Farmer Details</string>
+    <string name="demol3formtitle1"><u><b>Farmer Details</b></u></string>
+    <string name="title_activity_demo_l3__protocol">DemoL3 Activity </string>
+    <string name="title_activity_demo_l3__execution">DemoL3 Activity </string>
+    <string name="title_activity_demo_l3__interim_result">DemoL3 Activity </string>
+    <string name="title_activity_demo_l3__yield_result">DemoL3 Activity </string>
+    <string name="demol3formtitle2"><u><b>Protocol</b></u></string>
+    <string name="demol3formtitle3"><u><b>Execution</b></u></string>
+    <string name="demol3formtitle4"><u><b>Interim Result</b></u></string>
+    <string name="demol3formtitle5"><u><b>Yield Result</b></u></string>
+    <string name="title_activity_demo_l3__in_progress">In Progress Demo L3</string>
+    <string name="updateDemoL3"><u>Update DemoL3</u></string>
+    <string name="demol3idpretext"><u>Demo L3 Temp Id</u>: </string>
+
+    <!-- Get started by signing up entering your mobile number -->
+</resources>
+
+
+
+
+
