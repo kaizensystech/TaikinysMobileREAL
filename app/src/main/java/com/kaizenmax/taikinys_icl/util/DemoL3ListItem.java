@@ -8,6 +8,11 @@ public class DemoL3ListItem {
     private String farmerName;
     private String villageName;
 
+  /* public DemoL3ListItem()
+    {
+
+    } */
+
     public DemoL3ListItem(  String dateOfActivity, String lastUpdatedOn, String demoL3TempId,
             String demoL3PermanentId, String farmerName, String villageName) {
         this.dateOfActivity = dateOfActivity;

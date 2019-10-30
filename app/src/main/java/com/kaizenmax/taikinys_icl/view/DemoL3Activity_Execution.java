@@ -679,7 +679,7 @@ saveButton.setOnClickListener(new View.OnClickListener() {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data){
-
+        attachmentList =new ArrayList<byte []>();
         if(data!=null && data.getData()==null) {
 
            // Toast.makeText(this, "Request Code " + requestCode, Toast.LENGTH_SHORT).show();

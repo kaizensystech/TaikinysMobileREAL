@@ -24,7 +24,7 @@ WelcomeActivityPresenterInterface welcomeActivityPresenterInterface;
 
 
     @Override
-    public void signUp(String enteredMobileNumber) throws Exception{
+    public void signUp(String enteredMobileNumber) throws Exception {
 
         RequestQueue requestQueue = Volley.newRequestQueue(WelcomeActivity.getInstance());
         JsonObjectRequest jsonObjReq=null;

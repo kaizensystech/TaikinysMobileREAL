@@ -92,13 +92,14 @@ public class IndividualFarmerContactMainActivity extends AppCompatActivity
     Button saveButton;
 
 
+
     // VARIABLES OTHER THAN COMPONENTS
     DatePickerDialog picker;
     //MobileDatabase dbHelper;
     RequestQueue requestQueue;
 
-    List<String> cropCategories=new ArrayList<String>();
-    List<String> cropFocusList=new ArrayList<String>();
+    List<String> cropCategories;
+    List<String> cropFocusList;
     String selectedCropCategory;
     String selectedCropFocus;
 
@@ -111,8 +112,8 @@ public class IndividualFarmerContactMainActivity extends AppCompatActivity
 
 
 
-    List<View> viewList=new ArrayList<View>();
-    List<RetailerDetailsPojo> retailerDetailsPojoList=new ArrayList<RetailerDetailsPojo>();
+    List<View> viewList;
+    List<RetailerDetailsPojo> retailerDetailsPojoList;
 
     ProgressBar progressBar;
     SharedPreferences sharedpreferences;
@@ -124,7 +125,7 @@ public class IndividualFarmerContactMainActivity extends AppCompatActivity
     String faOfficeState;
 
 
-    MobileDatabase dbHelper= new MobileDatabase(this);
+    MobileDatabase dbHelper;
 
 
 
@@ -143,6 +144,23 @@ public class IndividualFarmerContactMainActivity extends AppCompatActivity
                         .setAction("Action", null).show();
             }
         }); */
+
+
+
+       //
+
+        viewList=new ArrayList<View>();
+        cropCategories=new ArrayList<String>();
+        cropFocusList=new ArrayList<String>();
+        retailerDetailsPojoList=new ArrayList<RetailerDetailsPojo>();
+        dbHelper= new MobileDatabase(this);
+
+
+
+
+       //
+
+
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -166,6 +184,7 @@ public class IndividualFarmerContactMainActivity extends AppCompatActivity
         landAcresEditText = findViewById(R.id.acres);
         expensesEditText = findViewById(R.id.expenses);
         retailerDetailsTextView=findViewById(R.id.retailerDetailsText);
+
 
 
 
@@ -525,9 +544,11 @@ public class IndividualFarmerContactMainActivity extends AppCompatActivity
                 } else {
 
 
-
+                //    Toast.makeText(IndividualFarmerContactMainActivity.this, "HELLO", Toast.LENGTH_SHORT).show();
 
                     for (int i = 0; i < viewList.size(); i++) {
+
+                  //      Toast.makeText(IndividualFarmerContactMainActivity.this, "HII", Toast.LENGTH_SHORT).show();
 
                         EditText firmName = (viewList.get(i)).findViewById(R.id.firmName);
                         EditText retailerMobile = (viewList.get(i)).findViewById(R.id.retailerMobile);
@@ -538,7 +559,7 @@ public class IndividualFarmerContactMainActivity extends AppCompatActivity
                         retailerDetailsPojo.setFirmName(firmName.getText().toString());
                         retailerDetailsPojo.setRetailerMobile(retailerMobile.getText().toString());
                         retailerDetailsPojo.setPropName(proprietorName.getText().toString());
-                        // Toast.makeText(IndividualFarmerContactActivity.this, "FirmName:  " + as, Toast.LENGTH_SHORT).show();
+                        // Toast.makeText(IndividualFarmerContactMainActivity.this, "FirmName:  " + firmName.getText().toString(), Toast.LENGTH_SHORT).show();
 
 
 
@@ -607,9 +628,15 @@ public class IndividualFarmerContactMainActivity extends AppCompatActivity
                         EditText propName = view.findViewById(R.id.propName);
                         EditText retailerMobile = view.findViewById(R.id.retailerMobile);
 
+                    //
+
+
+
                         firmName.setText("");
                         propName.setText("");
                         retailerMobile.setText("");
+
+
 
                     }
 
@@ -906,11 +933,16 @@ public class IndividualFarmerContactMainActivity extends AppCompatActivity
         //  Toast.makeText(this, "aaaa ", Toast.LENGTH_SHORT).show();
 //https://stackoverflow.com/questions/3995215/add-and-remove-views-in-android-dynamically
 
+      /*  View namebar = View.findViewById(R.id.namebar);
+        ((ViewGroup) namebar.getParent()).removeView(namebar); */
 
 
+       // Toast.makeText(IndividualFarmerContactMainActivity.getInstance(), "VIEW "+v, Toast.LENGTH_SHORT).show();
 
-        View namebar = findViewById(R.id.retailerDetails);
+
+        View namebar = ((View) v.getParent().getParent()).findViewById(R.id.retailerDetails);
         ViewGroup parent = (ViewGroup) namebar.getParent();
+
         if (parent != null) {
             parent.removeView(namebar);
         }

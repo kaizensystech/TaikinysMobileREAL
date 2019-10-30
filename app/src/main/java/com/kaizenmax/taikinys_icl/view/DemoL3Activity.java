@@ -78,7 +78,7 @@ public class DemoL3Activity extends AppCompatActivity
 
     //For upload
     int PICK_IMAGE_MULTIPLE = 1;
-    List<byte []> attachmentList =new ArrayList<byte []>();
+    List<byte []> attachmentList ;
     AutoCompleteTextView firmName;
     EditText proprietorName;
     EditText retailerMobile;
@@ -88,13 +88,13 @@ public class DemoL3Activity extends AppCompatActivity
 
     private static DemoL3Activity instance;
     private android.support.v7.widget.LinearLayoutCompat parentLinearLayout;
-    List<View> viewList=new ArrayList<View>();
+    List<View> viewList;
 
     DemoL3ActivityPresenterInterface demoL3ActivityPresenterInterface;
 
     HorizontalStepView setpview5;
-    List<StepBean> stepsBeanList = new ArrayList<>();
-    List<RetailerDetailsPojo> retailerDetailsPojoList=new ArrayList<RetailerDetailsPojo>();
+    List<StepBean> stepsBeanList ;
+    List<RetailerDetailsPojo> retailerDetailsPojoList;
 
     String stage;
      Integer demoL3SerialId;
@@ -113,6 +113,24 @@ public class DemoL3Activity extends AppCompatActivity
                         .setAction("Action", null).show();
             }
         }); */
+
+
+
+      //
+
+        attachmentList =new ArrayList<byte []>();
+        viewList=new ArrayList<View>();
+        stepsBeanList = new ArrayList<>();
+        retailerDetailsPojoList=new ArrayList<RetailerDetailsPojo>();
+
+      //
+
+
+
+
+
+
+
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -613,7 +631,7 @@ public class DemoL3Activity extends AppCompatActivity
 
                 if (dateOfActivity_entered != null && !dateOfActivity_entered.equals("")
                         && farmerName_entered != null && !farmerName_entered.equals("")
-                        && farmerMobile_entered != null && !farmerMobile_entered.equals("")
+                        && farmerMobile_entered != null && !farmerMobile_entered.equals("") && farmerMobile_entered.trim().length()==10
                         && farmerLandAcres_entered != null && !farmerLandAcres_entered.equals("")
                         && village_entered != null && !village_entered.equals("")
                         && demoL3SerialId_populated != null && !demoL3SerialId_populated.equals("")
@@ -776,13 +794,14 @@ public class DemoL3Activity extends AppCompatActivity
                         dateOfActivityEditText.setError("Please select date of activity");
                     if (farmerName_entered == null || farmerName_entered.equals(""))
                         farmerNameEditText.setError("Please enter farmer name");
-                    if (farmerMobile_entered == null || farmerMobile_entered.equals(""))
-                        farmerMobileEditText.setError("Please enter farmer mobile");
                     if (farmerLandAcres_entered == null || farmerLandAcres_entered.equals(""))
                         farmerLandEditText.setError("Please enter farmer land");
                     if (village_entered == null || village_entered.equals(""))
                         villageNameEditText.setError("Please enter village");
-
+                    if (farmerMobile_entered != null || farmerMobile_entered.equals(""))
+                        farmerMobileEditText.setError("Please enter farmer mobile");
+                     if (farmerMobile_entered != null && !farmerMobile_entered.equals("")   && farmerMobile_entered.trim().length()<10)
+                        farmerMobileEditText.setError("Please enter 10 digits in farmer mobile");
 
                 }
 
@@ -924,9 +943,10 @@ public class DemoL3Activity extends AppCompatActivity
 //https://stackoverflow.com/questions/3995215/add-and-remove-views-in-android-dynamically
 
 
+        View namebar = ((View) v.getParent().getParent()).findViewById(R.id.retailerDetails);
 
 
-        View namebar = findViewById(R.id.retailerDetails);
+       // View namebar = findViewById(R.id.retailerDetails);
         ViewGroup parent = (ViewGroup) namebar.getParent();
         if (parent != null) {
             parent.removeView(namebar);
@@ -1002,7 +1022,7 @@ public class DemoL3Activity extends AppCompatActivity
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-
+        attachmentList =new ArrayList<byte []>();
         if(data!=null && data.getData()==null) {
 
         //    Toast.makeText(this, "Request Code " + requestCode, Toast.LENGTH_SHORT).show();

@@ -951,7 +951,7 @@ saveButton.setOnClickListener(new View.OnClickListener() {
 
 
 
-        View namebar = findViewById(R.id.retailerDetails);
+        View namebar = ((View) v.getParent().getParent()).findViewById(R.id.retailerDetails);
         ViewGroup parent = (ViewGroup) namebar.getParent();
         if (parent != null) {
             parent.removeView(namebar);
@@ -968,8 +968,9 @@ saveButton.setOnClickListener(new View.OnClickListener() {
 
 
 
+        View namebar = ((View) v.getParent().getParent()).findViewById(R.id.farmerDetails);
 
-        View namebar = findViewById(R.id.farmerDetails);
+       // View namebar = findViewById(R.id.farmerDetails);
         ViewGroup parent = (ViewGroup) namebar.getParent();
         if (parent != null) {
             parent.removeView(namebar);
@@ -983,22 +984,23 @@ saveButton.setOnClickListener(new View.OnClickListener() {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data)
     {
-
+        attachmentList =new ArrayList<byte []>();
         if(data!=null && data.getData()==null) {
 
-            Toast.makeText(this, "Request Code " + requestCode, Toast.LENGTH_SHORT).show();
-            Toast.makeText(this, "Result Code " + resultCode, Toast.LENGTH_SHORT).show();
+         //   Toast.makeText(this, "Request Code " + requestCode, Toast.LENGTH_SHORT).show();
+           // Toast.makeText(this, "Result Code " + resultCode, Toast.LENGTH_SHORT).show();
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
 
 
-                Toast.makeText(this, "Data " + data.getClipData(), Toast.LENGTH_SHORT).show();
-                Toast.makeText(this, "Files count " + data.getClipData().getItemCount(), Toast.LENGTH_SHORT).show();
+             //   Toast.makeText(this, "Data " + data.getClipData(), Toast.LENGTH_SHORT).show();
+               // Toast.makeText(this, "Files count " + data.getClipData().getItemCount(), Toast.LENGTH_SHORT).show();
 
                 ClipData clipData = data.getClipData();
 
 
-                if(data!=null && data.getClipData()!=null && data.getClipData().getItemCount()==0)
+                if(data!=null && data.getClipData()!=null && data.getClipData().getItemCount()==0 )
                     selectedFilesCountTextview.setText("");
+
 
                 if(clipData!=null & clipData.getItemCount()<=5 && clipData.getItemCount()!=0)
                 {
@@ -1015,7 +1017,7 @@ saveButton.setOnClickListener(new View.OnClickListener() {
 
                             File f = new File(uri.getPath());
                             long size = f.length();
-                            Toast.makeText(this, "FILE SIZE "+size, Toast.LENGTH_SHORT).show();
+                          //  Toast.makeText(this, "FILE SIZE "+size, Toast.LENGTH_SHORT).show();
 
                         } catch (FileNotFoundException e) {
                             e.printStackTrace();
@@ -1029,7 +1031,7 @@ saveButton.setOnClickListener(new View.OnClickListener() {
                             attachmentList.add(inputData);
                             // dbHelper.insertDataSetMaster(inputData);
 
-                            Toast.makeText(this, "BYTE ARRAY " + inputData, Toast.LENGTH_SHORT).show();
+                           // Toast.makeText(this, "BYTE ARRAY " + inputData, Toast.LENGTH_SHORT).show();
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
@@ -1069,9 +1071,17 @@ saveButton.setOnClickListener(new View.OnClickListener() {
                 attachmentList.add(inputData);
                 // dbHelper.insertDataSetMaster(inputData);
 
-                selectedFilesCountTextview.setText(" 1 file selected");
 
-                Toast.makeText(this, "SINGLE BYTE ARRAY " + inputData, Toast.LENGTH_SHORT).show();
+
+
+
+                    selectedFilesCountTextview.setText("1 file selected");
+
+
+
+
+
+                //Toast.makeText(this, "SINGLE BYTE ARRAY " + inputData, Toast.LENGTH_SHORT).show();
             } catch (IOException e) {
                 e.printStackTrace();
             }

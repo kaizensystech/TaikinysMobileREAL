@@ -15,6 +15,8 @@ import android.support.v4.app.NotificationCompat;
 
 import com.kaizenmax.taikinys_icl.model.DemoL3DataPushNetworkOperation;
 import com.kaizenmax.taikinys_icl.model.DemoL3DataPushNetworkOperationInterface;
+import com.kaizenmax.taikinys_icl.model.MasterDateSynchronizationNetworkOperation;
+import com.kaizenmax.taikinys_icl.model.MasterDateSynchronizationNetworkOperationInterface;
 import com.kaizenmax.taikinys_icl.model.OtpVerificationActivityNetworkOperationInterface;
 import com.kaizenmax.taikinys_icl.model.OtpVerificationNetworkOperation;
 import com.kaizenmax.taikinys_icl.util.SharedPreferenceUtil;
@@ -84,10 +86,10 @@ public class DataDownloadService extends Service {
                     otp =sharedpreferences.getString(SharedPreferenceUtil.OTPKEY,null);
                 }
 
-            OtpVerificationActivityNetworkOperationInterface otpVerificationActivityNetworkOperationInterface = new OtpVerificationNetworkOperation();
+            MasterDateSynchronizationNetworkOperationInterface masterDateSynchronizationNetworkOperationInterface = new MasterDateSynchronizationNetworkOperation();
             try {
 
-              //  otpVerificationActivityNetworkOperationInterface.otpVerification(mobile,otp);
+                masterDateSynchronizationNetworkOperationInterface.faSpecificDataSynchronization(mobile);
             } catch (Exception e) {
                 e.printStackTrace();
             }

@@ -112,7 +112,7 @@ public class MyAdapter_ForDemoL3IdList extends RecyclerView.Adapter<MyAdapter_Fo
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(DemoL3_InProgressActivity.getInstance(), ""+item.getDemoL3TempId(), Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(DemoL3_InProgressActivity.getInstance(), ""+item.getDemoL3TempId(), Toast.LENGTH_SHORT).show();
 
                     DemoL3ActivityPresenterInterface demoL3ActivityPresenterInterface = new DemoL3ActivityPresenter();
 
@@ -122,7 +122,7 @@ public class MyAdapter_ForDemoL3IdList extends RecyclerView.Adapter<MyAdapter_Fo
                         stage = demoL3ActivityPresenterInterface.getStage(tempId);
 
 
-                    Toast.makeText(DemoL3_InProgressActivity.getInstance(), "stage "+stage, Toast.LENGTH_SHORT).show();
+                   // Toast.makeText(DemoL3_InProgressActivity.getInstance(), "stage "+stage, Toast.LENGTH_SHORT).show();
 
                    if(stage.equals(CommonConstants.PROTOCOL.toString()))
                     {

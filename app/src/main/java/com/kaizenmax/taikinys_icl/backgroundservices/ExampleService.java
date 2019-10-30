@@ -24,7 +24,7 @@ import static com.kaizenmax.taikinys_icl.util.App.CHANNEL_ID;
 
 
 public class ExampleService extends Service {
-
+Intent exampleServiceIntent;
     @Override
     public void onCreate() {
 
@@ -33,6 +33,8 @@ public class ExampleService extends Service {
  
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
+        exampleServiceIntent = intent;
+
         String input = intent.getStringExtra("inputExtra");
  
         Intent notificationIntent = new Intent(this, IndividualFarmerContactMainActivity.class);
@@ -55,9 +57,9 @@ public class ExampleService extends Service {
             @Override
             public void run() {
                 good();
-                handler.postDelayed(this, 10000);
+                handler.postDelayed(this, 1800000);
             }
-        }, 10000);
+        }, 1800000);
 
 
 
@@ -109,6 +111,10 @@ public class ExampleService extends Service {
 
 
         }
+
+
+        //stopService(exampleServiceIntent);
+
     }
 
 

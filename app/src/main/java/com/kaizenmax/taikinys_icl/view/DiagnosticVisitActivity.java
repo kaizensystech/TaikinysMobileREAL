@@ -581,7 +581,7 @@ String uploadFlagStatus = "No";
 
                 if (dateOfActivity_entered != null && !dateOfActivity_entered.equals("")
                         && farmerName_entered!=null && !farmerName_entered.equals("")
-                        && farmerMobile_entered!=null && !farmerMobile_entered.equals("")
+                        && farmerMobile_entered!=null && !farmerMobile_entered.equals("") &&  farmerMobile_entered.trim().length()==10
                         && village_entered!=null && !village_entered.equals("") && !(village_entered.trim().length()<2)
                         && selectedCropCategory != null && !selectedCropCategory.equals("") && !selectedCropCategory.equals("Select Crop Category*")
                         && selectedCropFocus != null && !selectedCropFocus.equals("") && !selectedCropFocus.equals("Select Crop Focus*")
@@ -706,7 +706,10 @@ String uploadFlagStatus = "No";
                         farmerNameEditText.setError("Please enter farmer name");
 
                     if(farmerMobile_entered==null || farmerMobile_entered.equals(""))
-                        farmerMobileEditText.setError("Please enter village");
+                        farmerMobileEditText.setError("Please enter farmer mobile");
+
+                    if (farmerMobile_entered != null && !farmerMobile_entered.equals("")   && farmerMobile_entered.trim().length()<10)
+                        farmerMobileEditText.setError("Please enter 10 digits in farmer mobile");
 
                     if(village_entered==null || village_entered.equals(""))
                         villageNameEditText.setError("Please enter village");
@@ -978,10 +981,11 @@ String uploadFlagStatus = "No";
         //  Toast.makeText(this, "aaaa ", Toast.LENGTH_SHORT).show();
 //https://stackoverflow.com/questions/3995215/add-and-remove-views-in-android-dynamically
 
+        View namebar = ((View) v.getParent().getParent()).findViewById(R.id.retailerDetails);
 
 
 
-        View namebar = findViewById(R.id.retailerDetails);
+//        View namebar = findViewById(R.id.retailerDetails);
         ViewGroup parent = (ViewGroup) namebar.getParent();
         if (parent != null) {
             parent.removeView(namebar);
@@ -1002,16 +1006,16 @@ String uploadFlagStatus = "No";
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data){
-
+        attachmentList =new ArrayList<byte []>();
         if(data!=null && data.getData()==null) {
 
-            Toast.makeText(this, "Request Code " + requestCode, Toast.LENGTH_SHORT).show();
-            Toast.makeText(this, "Result Code " + resultCode, Toast.LENGTH_SHORT).show();
+         //   Toast.makeText(this, "Request Code " + requestCode, Toast.LENGTH_SHORT).show();
+           // Toast.makeText(this, "Result Code " + resultCode, Toast.LENGTH_SHORT).show();
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
 
 
-                Toast.makeText(this, "Data " + data.getClipData(), Toast.LENGTH_SHORT).show();
-                Toast.makeText(this, "Files count " + data.getClipData().getItemCount(), Toast.LENGTH_SHORT).show();
+            //    Toast.makeText(this, "Data " + data.getClipData(), Toast.LENGTH_SHORT).show();
+              //  Toast.makeText(this, "Files count " + data.getClipData().getItemCount(), Toast.LENGTH_SHORT).show();
 
                 ClipData clipData = data.getClipData();
 
@@ -1034,7 +1038,7 @@ String uploadFlagStatus = "No";
 
                             File f = new File(uri.getPath());
                             long size = f.length();
-                            Toast.makeText(this, "FILE SIZE "+size, Toast.LENGTH_SHORT).show();
+                         //   Toast.makeText(this, "FILE SIZE "+size, Toast.LENGTH_SHORT).show();
 
                         } catch (FileNotFoundException e) {
                             e.printStackTrace();
@@ -1048,7 +1052,7 @@ String uploadFlagStatus = "No";
                             attachmentList.add(inputData);
                             // dbHelper.insertDataSetMaster(inputData);
 
-                            Toast.makeText(this, "BYTE ARRAY " + inputData, Toast.LENGTH_SHORT).show();
+                         //   Toast.makeText(this, "BYTE ARRAY " + inputData, Toast.LENGTH_SHORT).show();
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
@@ -1090,7 +1094,7 @@ String uploadFlagStatus = "No";
 
                 filesCountTextView.setText(" 1 file selected");
 
-                Toast.makeText(this, "SINGLE BYTE ARRAY " + inputData, Toast.LENGTH_SHORT).show();
+              //  Toast.makeText(this, "SINGLE BYTE ARRAY " + inputData, Toast.LENGTH_SHORT).show();
             } catch (IOException e) {
                 e.printStackTrace();
             }

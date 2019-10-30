@@ -70,7 +70,7 @@ public class MandiCampaignDataPushNetworkOperation implements MandiCampaignDataP
                             //  Toast.makeText(this, "TOAST "+id+" Cursor Size "+cursor.getCount(), Toast.LENGTH_SHORT).show();
                             object = new JSONObject();
 
-                            Toast.makeText(MandiCampaignActivity.getInstance(), "MANDI NAME "+mandiName +" District "+faOfficeDistrict, Toast.LENGTH_SHORT).show();
+                           // Toast.makeText(MandiCampaignActivity.getInstance(), "MANDI NAME "+mandiName +" District "+faOfficeDistrict, Toast.LENGTH_SHORT).show();
                             object.put("dateOfActivity", dateOfActivity+" 00:00:00");
                             object.put("mandiName", mandiName);
                             object.put("district", faOfficeDistrict );

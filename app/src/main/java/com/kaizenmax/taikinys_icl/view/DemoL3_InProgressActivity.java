@@ -80,10 +80,12 @@ public class DemoL3_InProgressActivity extends AppCompatActivity
 
         instance = this;
 
-        listItems = new ArrayList<>();
+        listItems = new ArrayList<DemoL3ListItem>();
 
 
         demoL3ActivityPresenterInterface = new DemoL3ActivityPresenter();
+
+
 
 
        // Cursor cursor = demoL3ActivityPresenterInterface.getDemoL3DataFromID();
@@ -91,7 +93,30 @@ public class DemoL3_InProgressActivity extends AppCompatActivity
 
         Cursor cursor = null;
         try {
+
+        /*  for(int k=0;k<100;k++)
+            {
+               // DemoL3ListItem item2 = new DemoL3ListItem();
+
+                DemoL3ListItem obj = new DemoL3ListItem("22/10/2019",
+                        "2019-0099", "123",
+                        "5002" ,"Chaggan Lal", "Khairani");
+              //  obj.setDemoL3PermanentId("321");
+                //obj.setDemoL3TempId("3212");
+                //obj.setFarmerName("Chaggu Laal");
+                //obj.setVillageName("Khiloda");
+
+                listItems.add(obj);
+
+            }*/
+
+
             listItems = demoL3ActivityPresenterInterface.getAll_Incompleted_DemoL3Data();
+
+
+
+
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -123,8 +148,8 @@ public class DemoL3_InProgressActivity extends AppCompatActivity
 
         }  */
 
-        adapter = new MyAdapter_ForDemoL3IdList(listItems, this);
-        recyclerView.addItemDecoration(new DividerItemDecoration(recyclerView.getContext(),
+       adapter = new MyAdapter_ForDemoL3IdList(listItems, this);
+       recyclerView.addItemDecoration(new DividerItemDecoration(recyclerView.getContext(),
                 DividerItemDecoration.VERTICAL));
 
         recyclerView.setAdapter(adapter);

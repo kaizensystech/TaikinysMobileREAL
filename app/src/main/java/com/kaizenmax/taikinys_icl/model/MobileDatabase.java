@@ -22,6 +22,8 @@ import com.kaizenmax.taikinys_icl.pojo.VillagesPojo;
 import com.kaizenmax.taikinys_icl.util.CommonConstants;
 import com.kaizenmax.taikinys_icl.util.DemoL3ListItem;
 import com.kaizenmax.taikinys_icl.view.DemoL3Activity;
+import com.kaizenmax.taikinys_icl.view.DemoL3_InProgressActivity;
+import com.kaizenmax.taikinys_icl.view.FarmerMeetingActivity;
 import com.kaizenmax.taikinys_icl.view.IndividualFarmerContactMainActivity;
 
 
@@ -1738,6 +1740,8 @@ for(int i=0 ; i<farmerDetailsPojoList.size();i++) {
         Cursor cursor2 = db2.rawQuery("Select * from " +PromoFarmerMeetingPojo.PROMOFARMERMEETING_TABLE_NAME +
                 " order by ROWID DESC limit 1", null );
 
+       // db2.close();
+
         Integer id_FM=null;
         if (cursor2 != null && cursor2.moveToFirst()) {
             do {
@@ -1869,10 +1873,10 @@ for(int i=0 ; i<farmerDetailsPojoList.size();i++) {
 
 
 
-
         SQLiteDatabase db2 = this.getReadableDatabase();
         Cursor cursor2 = db2.rawQuery("Select * from " +MandiCampaignPojo.MANDICAMPAIGN_TABLE_NAME +
                 " order by ROWID DESC limit 1", null );
+
 
         Integer id_MC=null;
         if (cursor2 != null && cursor2.moveToFirst()) {
@@ -1897,8 +1901,8 @@ for(int i=0 ; i<farmerDetailsPojoList.size();i++) {
 
         cursor2.close();
 
-        SQLiteDatabase db3 = getWritableDatabase();
-        ContentValues contentValues3 = new ContentValues();
+       // SQLiteDatabase db3 = getWritableDatabase();
+        //ContentValues contentValues3 = new ContentValues();
 
         for(int i=0;i<retailerDetailsPojoList.size();i++)
         {
@@ -2037,7 +2041,6 @@ for(int i=0 ; i<farmerDetailsPojoList.size();i++) {
 
 
         cursor.close();
-
         return list;
     }
 
@@ -2130,10 +2133,10 @@ for(int i=0 ; i<farmerDetailsPojoList.size();i++) {
 
 
 
-
         SQLiteDatabase db2 = this.getReadableDatabase();
         Cursor cursor2 = db2.rawQuery("Select * from " +DemoL3Pojo.DEMOL3_TABLE_NAME +
                 " order by ROWID DESC limit 1", null );
+
 
         Integer id_demoL3_SerialId = null;
         if (cursor2 != null && cursor2.moveToFirst()) {
@@ -2219,7 +2222,6 @@ for(int i=0 ; i<farmerDetailsPojoList.size();i++) {
     public Cursor getAllEntriesFromDemoL3() {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor res = db.rawQuery( "SELECT * FROM " + DemoL3Pojo.DEMOL3_TABLE_NAME, null );
-
         return res;
     }
 
@@ -2281,7 +2283,6 @@ for(int i=0 ; i<farmerDetailsPojoList.size();i++) {
 
             db4.insert(ProductsDetailsPojo.PRODUCTDETAILS_TABLE_NAME, null, contentValues4);
         }
-
         // myDB.update(TableName, "(Field1, Field2, Field3)" + " VALUES ('Bob', 19, 'Male')", "where _id = 1", null);
 
     }
@@ -2333,7 +2334,6 @@ for(int i=0 ; i<farmerDetailsPojoList.size();i++) {
 
         db.execSQL(sql);
 
-
     }
 
     public void insertDemoL3Yielddata_Update(String dateOfYield_entered, String yieldResult_entered,
@@ -2359,7 +2359,6 @@ for(int i=0 ; i<farmerDetailsPojoList.size();i++) {
 
 
 
-
     }
 
     public Cursor getDemoL3DataFromID(Integer demoL3SerialId) {
@@ -2367,7 +2366,6 @@ for(int i=0 ; i<farmerDetailsPojoList.size();i++) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery("Select * from " +DemoL3Pojo.DEMOL3_TABLE_NAME +
                 " where "+DemoL3Pojo.DEMOL3_COLUMN_DEMOL3_SERIAL_ID+"=?", new String[]{demoL3SerialId.toString()} );
-
 
        return cursor;
     }
@@ -2482,7 +2480,6 @@ return farmerDetailsPojo;
 
 
         cursor.close();
-
         return list;
 
 
@@ -2497,55 +2494,81 @@ return farmerDetailsPojo;
 
     String notequal ="!='6'";
 
-       Cursor cursor=   db.rawQuery("Select * from "+DemoL3Pojo.DEMOL3_TABLE_NAME +    " order by "+DemoL3Pojo.DEMOL3_COLUMN_DATE_OF_ACTIVITY +" DESC ", null);
+       Cursor cursor=   db.rawQuery("Select "   +DemoL3Pojo.DEMOL3_COLUMN_DEMOL3_SERIAL_ID   +" ,"
+               +DemoL3Pojo.DEMOL3_COLUMN_DATE_OF_ACTIVITY +" ,"
+               +DemoL3Pojo.DEMOL3_COLUMN_MODIFY_DATE +" ,"
+               +DemoL3Pojo.DEMOL3_COLUMN_PERMANENT_DEMOL3_SERIAL_ID +" ,"
+               +DemoL3Pojo.DEMOL3_COLUMN_VILLAGE
+
+
+               +" from "+DemoL3Pojo.DEMOL3_TABLE_NAME + " where "+DemoL3Pojo.DEMOL3_COLUMN_STAGE +"!='6'"   +" order by "+DemoL3Pojo.DEMOL3_COLUMN_DATE_OF_ACTIVITY +" DESC ", null);
+
+
+    //    String dateOfActivity = cursor.getString(cursor.getColumnIndex(DemoL3Pojo.DEMOL3_COLUMN_DATE_OF_ACTIVITY));
+      //  String lastUpdatedOn = cursor.getString(cursor.getColumnIndex(DemoL3Pojo.DEMOL3_COLUMN_MODIFY_DATE));
+        //String demoL3TempId = cursor.getString(cursor.getColumnIndex(DemoL3Pojo.DEMOL3_COLUMN_DEMOL3_SERIAL_ID));
+        //String permanentId = cursor.getString(cursor.getColumnIndex(DemoL3Pojo.DEMOL3_COLUMN_PERMANENT_DEMOL3_SERIAL_ID));
+        //farmer Name is taken above
+        //String villageName = cursor.getString(cursor.getColumnIndex(DemoL3Pojo.DEMOL3_COLUMN_VILLAGE));
+
+//&& !cursor.getString(cursor.getColumnIndex(DemoL3Pojo.DEMOL3_COLUMN_STAGE)).equals(CommonConstants.CLOSE.toString())
 
 
 
+                if (cursor != null && cursor.moveToFirst()  ) {
+//                    Toast.makeText(DemoL3_InProgressActivity.getInstance(), "STAGE1 "+cursor.getString(cursor.getColumnIndex(DemoL3Pojo.DEMOL3_COLUMN_STAGE)) ,
+  //                  Toast.LENGTH_SHORT).show();
 
-
-
-            do {
-                if (cursor != null && cursor.moveToFirst() && !cursor.getString(cursor.getColumnIndex(DemoL3Pojo.DEMOL3_COLUMN_STAGE)).equals(CommonConstants.CLOSE.toString())) {
-                String demoL3SerialId = cursor.getString(cursor.getColumnIndex(DemoL3Pojo.DEMOL3_COLUMN_DEMOL3_SERIAL_ID));
-
-                //STARTS: different cursor for retrieving farmer details.. frmer retrieved will always be one in demoL3 case
-                Cursor farmerCursor = db.rawQuery("Select * from " + FarmerDetailsPojo.FARMERDETAILS_TABLE_NAME +
-                        " where " + FarmerDetailsPojo.FARMERDETAILS_COLUMN_PROMO_DEMOL3Serial_ID + "=?", new String[]{demoL3SerialId});
-
-
-                if (farmerCursor != null && farmerCursor.moveToFirst()) {
                     do {
-                        try {
-                            farmerName = farmerCursor.getString(farmerCursor.getColumnIndex(FarmerDetailsPojo.FARMERDETAILS_COLUMN_FARMER_NAME));
-                        } catch (Exception e) {
-                            e.printStackTrace();
+    //                    Toast.makeText(DemoL3_InProgressActivity.getInstance(), "STAGE "+cursor.getString(cursor.getColumnIndex(DemoL3Pojo.DEMOL3_COLUMN_STAGE)) ,
+      //                          Toast.LENGTH_SHORT).show();
+
+                     //   if (!cursor.getString(cursor.getColumnIndex(DemoL3Pojo.DEMOL3_COLUMN_STAGE)).equals(CommonConstants.CLOSE.toString())) {
+                            String demoL3SerialId = cursor.getString(cursor.getColumnIndex(DemoL3Pojo.DEMOL3_COLUMN_DEMOL3_SERIAL_ID));
+
+                            //STARTS: different cursor for retrieving farmer details.. frmer retrieved will always be one in demoL3 case
+                            Cursor farmerCursor = db.rawQuery("Select " + FarmerDetailsPojo.FARMERDETAILS_COLUMN_FARMER_NAME + "  from " + FarmerDetailsPojo.FARMERDETAILS_TABLE_NAME +
+                                    " where " + FarmerDetailsPojo.FARMERDETAILS_COLUMN_PROMO_DEMOL3Serial_ID + "=?", new String[]{demoL3SerialId});
+
+
+                            if (farmerCursor != null && farmerCursor.moveToFirst()) {
+                                do {
+                                    try {
+                                        farmerName = farmerCursor.getString(farmerCursor.getColumnIndex(FarmerDetailsPojo.FARMERDETAILS_COLUMN_FARMER_NAME));
+                                    } catch (Exception e) {
+                                        e.printStackTrace();
+                                    }
+
+                                } while (farmerCursor.moveToNext());
+
+                            }
+
+                            farmerCursor.close();
+
+                            //ENDS : different cursor for retrieving farmer details.. frmer retrieved will always be one in demoL3 case
+
+
+                            String dateOfActivity = cursor.getString(cursor.getColumnIndex(DemoL3Pojo.DEMOL3_COLUMN_DATE_OF_ACTIVITY));
+                            String lastUpdatedOn = cursor.getString(cursor.getColumnIndex(DemoL3Pojo.DEMOL3_COLUMN_MODIFY_DATE));
+                            String demoL3TempId = cursor.getString(cursor.getColumnIndex(DemoL3Pojo.DEMOL3_COLUMN_DEMOL3_SERIAL_ID));
+                            String permanentId = cursor.getString(cursor.getColumnIndex(DemoL3Pojo.DEMOL3_COLUMN_PERMANENT_DEMOL3_SERIAL_ID));
+                            //farmer Name is taken above
+                            String villageName = cursor.getString(cursor.getColumnIndex(DemoL3Pojo.DEMOL3_COLUMN_VILLAGE));
+
+
+                            DemoL3ListItem demoL3ListItem = new DemoL3ListItem(dateOfActivity, lastUpdatedOn, demoL3TempId, permanentId, farmerName, villageName);
+
+                            list.add(demoL3ListItem);
+                            // }
+
+                        //  }
+
                         }
 
-                    } while (farmerCursor.moveToNext());
+
+                        while (cursor.moveToNext());
 
                 }
-
-                farmerCursor.close();
-                //ENDS : different cursor for retrieving farmer details.. frmer retrieved will always be one in demoL3 case
-
-
-                String dateOfActivity = cursor.getString(cursor.getColumnIndex(DemoL3Pojo.DEMOL3_COLUMN_DATE_OF_ACTIVITY));
-                String lastUpdatedOn = cursor.getString(cursor.getColumnIndex(DemoL3Pojo.DEMOL3_COLUMN_MODIFY_DATE));
-                String demoL3TempId = cursor.getString(cursor.getColumnIndex(DemoL3Pojo.DEMOL3_COLUMN_DEMOL3_SERIAL_ID));
-                String permanentId = cursor.getString(cursor.getColumnIndex(DemoL3Pojo.DEMOL3_COLUMN_PERMANENT_DEMOL3_SERIAL_ID));
-                //farmer Name is taken above
-                String villageName = cursor.getString(cursor.getColumnIndex(DemoL3Pojo.DEMOL3_COLUMN_VILLAGE));
-
-
-                DemoL3ListItem demoL3ListItem = new DemoL3ListItem(dateOfActivity, lastUpdatedOn, demoL3TempId, permanentId, farmerName, villageName);
-
-                list.add(demoL3ListItem);
-
-
-            }
-
-            } while (cursor.moveToNext());
-
             // Toast.makeText(this, "TOTAL FETCHED COUNT "+x, Toast.LENGTH_SHORT).show();
 
         // Toast.makeText(this, "TOTAL FETCHED COUNT "+x, Toast.LENGTH_SHORT).show();
@@ -2558,8 +2581,7 @@ return farmerDetailsPojo;
 
 
 
-
-
+        //db.close();
         return list;
     }
 
@@ -2606,6 +2628,7 @@ return farmerDetailsPojo;
 
 
         cursor.close();
+
 
         return list;
     }
@@ -2679,6 +2702,7 @@ return farmerDetailsPojo;
 
 
         cursor.close();
+       // db.close();
 
         return list;
     }
@@ -2717,6 +2741,8 @@ return farmerDetailsPojo;
 
 
         cursor.close();
+        //db.close();
+
 
         return list;
     }
@@ -2732,22 +2758,29 @@ return farmerDetailsPojo;
             cv.put(DemoL3Pojo.DEMOL3_COLUMN_UPLOAD_FLAG,"Yes");
             db.update(DemoL3Pojo.DEMOL3_TABLE_NAME, cv,DemoL3Pojo.DEMOL3_COLUMN_DEMOL3_SERIAL_ID+" = ?", new String[]{id});
         }
+
+      //  db.close();
+
     }
 
     public void updateDemoL3_PERMANENT_ID(String tempDemoL3Id, String permanentId) {
         SQLiteDatabase db=getWritableDatabase();
 
-        Toast.makeText(DemoL3Activity.getInstance(), "PERMANENT ID is "+permanentId, Toast.LENGTH_SHORT).show();
+      //  Toast.makeText(DemoL3Activity.getInstance(), "PERMANENT ID is "+permanentId, Toast.LENGTH_SHORT).show();
 
         ContentValues cv = new ContentValues();
         cv.put(DemoL3Pojo.DEMOL3_COLUMN_PERMANENT_DEMOL3_SERIAL_ID, permanentId);
         db.update(DemoL3Pojo.DEMOL3_TABLE_NAME, cv,DemoL3Pojo.DEMOL3_COLUMN_DEMOL3_SERIAL_ID+" = ?", new String[]{tempDemoL3Id});
+
+
+        //db.close();
     }
 
     public void deleteAllEntriesOfFAMaster() {
         SQLiteDatabase db = this.getReadableDatabase();
 
         db.execSQL("delete from "+ FaMasterPojo.FAMASTER_TABLE_NAME);
+      //  db.close();
 
     }
 
@@ -2756,6 +2789,7 @@ return farmerDetailsPojo;
 
         db.execSQL("delete from "+ VillagesPojo.VILLAGES_TABLE_NAME);
 
+     //   db.close();
 
     }
 }

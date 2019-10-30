@@ -181,6 +181,39 @@ public class IndividualFarmerContactActivityPresenter implements IndividualFarme
                             String faOfficeDistrict=cursor.getString(cursor
                                     .getColumnIndex(PromoFarmerMeetingPojo.PROMOFARMERMEETING_COLUMN_DISTRICT));
 
+                            String numberOfFarmers = cursor.getString(cursor
+                                    .getColumnIndex(PromoFarmerMeetingPojo.PROMOFARMERMEETING_COLUMN_NUMBER_OF_FARMER));
+
+                            String meetingPurpose = cursor.getString(cursor
+                                    .getColumnIndex(PromoFarmerMeetingPojo.PROMOFARMERMEETING_COLUMN_MEETING_PURPOSE));
+
+                            String cropStage = cursor.getString(cursor
+                            .getColumnIndex(PromoFarmerMeetingPojo.PROMOFARMERMEETING_COLUMN_CROP_STAGE));
+
+                            String instructionsDose = cursor.getString(cursor
+                            .getColumnIndex(PromoFarmerMeetingPojo.PROMOFARMERMEETING_COLUMN_INSTRUCTIONS_DOSE));
+
+                            String problemCategory = cursor.getString(cursor
+                               .getColumnIndex(PromoFarmerMeetingPojo.PROMOFARMERMEETING_COLUMN_PROBLEM_CATEGORY));
+
+                            String problemSubCategory = cursor.getString(cursor
+                            .getColumnIndex(PromoFarmerMeetingPojo.PROMOFARMERMEETING_COLUMN_PROBLEM_SUB_CATEGORY));
+
+                            String description = cursor.getString(cursor
+                                    .getColumnIndex(PromoFarmerMeetingPojo.PROMOFARMERMEETING_COLUMN_DESCRIPTION));
+
+                            String recommendation = cursor.getString(cursor
+                                    .getColumnIndex(PromoFarmerMeetingPojo.PROMOFARMERMEETING_COLUMN_RECOMMENDATION));
+
+
+                            String nextVisitDate = cursor.getString(cursor
+                                     .getColumnIndex(PromoFarmerMeetingPojo.PROMOFARMERMEETING_COLUMN_NEXT_FIELD_VISIT_DATE));
+
+                           String problemDescription = cursor.getString(cursor
+                                    .getColumnIndex(PromoFarmerMeetingPojo.PROMOFARMERMEETING_COLUMN_PROBLEM_DESCRIPTION));
+
+
+
 
                             //  Toast.makeText(IndividualFarmerContactActivity.this, "District "+faOfficeDistrict, Toast.LENGTH_SHORT).show();
 
@@ -196,6 +229,21 @@ public class IndividualFarmerContactActivityPresenter implements IndividualFarme
                             object.put("village", village);
                             object.put("expenses", expenses);
 
+                            object.put("expenses", expenses);
+
+                          //
+                            object.put("numberOfFarmers", numberOfFarmers);
+
+                            object.put("meetingPurpose", meetingPurpose);
+                            object.put("cropStage", cropStage);
+                            object.put("instructionsDose",instructionsDose);
+
+                            object.put("problemCategory", problemCategory);
+                            object.put("problemSubCategory", problemSubCategory);
+                            object.put("description", description);
+                            object.put("recommendation",recommendation);
+                            object.put("nextVisitDate", nextVisitDate+" 00:00:00");
+                            object.put("problemDescription", problemDescription);
 
                             List<RetailerDetailsPojo> retailerDetailsPojoList = dbHelper.getRetailerDetails(id);
 
@@ -237,6 +285,7 @@ public class IndividualFarmerContactActivityPresenter implements IndividualFarme
                             }
 
                             object.put("productDetailsRests", productsDetails_jsonArray);
+
 
 
 

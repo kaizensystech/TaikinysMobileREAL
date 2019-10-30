@@ -18,7 +18,6 @@ import java.util.List;
 public class DemoL3ActivityPresenter implements DemoL3ActivityPresenterInterface {
     MobileDatabase dbHelper =new MobileDatabase(DemoL3Activity.getInstance());
 
-    MobileDatabase dbHelper2 =new MobileDatabase(DemoL3_InProgressActivity.getInstance());
     @Override
     public List<String> getVillageList() throws Exception {
         List<String> villageList=dbHelper.getVillageList();
@@ -144,6 +143,7 @@ public class DemoL3ActivityPresenter implements DemoL3ActivityPresenterInterface
     @Override
     public String getStage(Integer demoSerialId) throws Exception {
         String stage = dbHelper.getStage(demoSerialId);
+
         return stage;
     }
 
@@ -171,8 +171,9 @@ public class DemoL3ActivityPresenter implements DemoL3ActivityPresenterInterface
 
     @Override
     public List<String> getSelectedProductList(Integer demoL3SerialId) throws Exception {
+        MobileDatabase dbHelper2 =new MobileDatabase(DemoL3_InProgressActivity.getInstance());
 
-        List<String> selectedProductList = dbHelper.getSelectedProductList(demoL3SerialId);
+        List<String> selectedProductList = dbHelper2.getSelectedProductList(demoL3SerialId);
 
 
 
@@ -181,7 +182,10 @@ public class DemoL3ActivityPresenter implements DemoL3ActivityPresenterInterface
 
     @Override
     public List<DemoL3ListItem> getAll_Incompleted_DemoL3Data() throws Exception {
+        MobileDatabase dbHelper2 =new MobileDatabase(DemoL3_InProgressActivity.getInstance());
+
         List<DemoL3ListItem> list=   dbHelper2.getAll_Incompleted_DemoL3Data();
+
         return list;
         }
 }

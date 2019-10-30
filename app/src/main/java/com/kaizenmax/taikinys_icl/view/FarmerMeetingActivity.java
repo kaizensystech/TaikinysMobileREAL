@@ -556,7 +556,7 @@ retailerMobile = findViewById(R.id.retailerMobile);
                         retailerDetailsPojo.setFirmName(firmName.getText().toString());
                         retailerDetailsPojo.setRetailerMobile(retailerMobile.getText().toString());
                         retailerDetailsPojo.setPropName(proprietorName.getText().toString());
-                        // Toast.makeText(IndividualFarmerContactActivity.this, "FirmName:  " + as, Toast.LENGTH_SHORT).show();
+//                         Toast.makeText(FarmerMeetingActivity.this, "FirmName:  " + firmName.getText(), Toast.LENGTH_SHORT).show();
 
 
 
@@ -576,7 +576,7 @@ retailerMobile = findViewById(R.id.retailerMobile);
                         farmerDetailsPojo.setFarmerLand(farmerLand.getText().toString());
                         farmerDetailsPojo.setFarmerMobile(farmerMobile.getText().toString());
 
-                        // Toast.makeText(IndividualFarmerContactActivity.this, "FirmName:  " + as, Toast.LENGTH_SHORT).show();
+  //                       Toast.makeText(FarmerMeetingActivity.this, "Farmer Name:  " + farmerName.getText(), Toast.LENGTH_SHORT).show();
 
 
 
@@ -1003,7 +1003,7 @@ if(errorStatus==true)
 
 
 
-        View namebar = findViewById(R.id.retailerDetails);
+        View namebar = ((View) v.getParent().getParent()).findViewById(R.id.retailerDetails);
         ViewGroup parent = (ViewGroup) namebar.getParent();
         if (parent != null) {
             parent.removeView(namebar);
@@ -1019,9 +1019,10 @@ if(errorStatus==true)
 //https://stackoverflow.com/questions/3995215/add-and-remove-views-in-android-dynamically
 
 
+        View namebar = ((View) v.getParent().getParent()).findViewById(R.id.farmerDetails);
 
 
-        View namebar = findViewById(R.id.farmerDetails);
+       // View namebar = findViewById(R.id.farmerDetails);
         ViewGroup parent = (ViewGroup) namebar.getParent();
         if (parent != null) {
             parent.removeView(namebar);
@@ -1050,27 +1051,30 @@ if(errorStatus==true)
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-
+attachmentList = new ArrayList<byte []>();
         if(data!=null && data.getData()==null) {
 
-            Toast.makeText(this, "Request Code " + requestCode, Toast.LENGTH_SHORT).show();
-            Toast.makeText(this, "Result Code " + resultCode, Toast.LENGTH_SHORT).show();
+          //  Toast.makeText(this, "Request Code " + requestCode, Toast.LENGTH_SHORT).show();
+           // Toast.makeText(this, "Result Code " + resultCode, Toast.LENGTH_SHORT).show();
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
 
 
-                Toast.makeText(this, "Data " + data.getClipData(), Toast.LENGTH_SHORT).show();
-                Toast.makeText(this, "Files count " + data.getClipData().getItemCount(), Toast.LENGTH_SHORT).show();
+             //   Toast.makeText(this, "Data " + data.getClipData(), Toast.LENGTH_SHORT).show();
+             //   Toast.makeText(this, "Files count " + data.getClipData().getItemCount(), Toast.LENGTH_SHORT).show();
 
                 ClipData clipData = data.getClipData();
 
 
-                if(data!=null && data.getClipData()!=null && data.getClipData().getItemCount()==0)
+                if(data!=null && data.getClipData()!=null && data.getClipData().getItemCount()==0 )
                     selectedFilesCountTextview.setText("");
 
-                if(clipData!=null & clipData.getItemCount()<=5 && clipData.getItemCount()!=0)
+
+                if(clipData!=null && clipData.getItemCount()<=5 && clipData.getItemCount()!=0)
                 {
 
-                    selectedFilesCountTextview.setText(" "+clipData.getItemCount()+" files selected");
+
+
+                    selectedFilesCountTextview.setText(clipData.getItemCount()+" files selected");
 
                     for (int i = 0; i < data.getClipData().getItemCount(); i++) {
                         Uri uri = clipData.getItemAt(i).getUri();
@@ -1082,7 +1086,7 @@ if(errorStatus==true)
 
                             File f = new File(uri.getPath());
                             long size = f.length();
-                            Toast.makeText(this, "FILE SIZE "+size, Toast.LENGTH_SHORT).show();
+                           // Toast.makeText(this, "FILE SIZE "+size, Toast.LENGTH_SHORT).show();
 
                         } catch (FileNotFoundException e) {
                             e.printStackTrace();
@@ -1096,7 +1100,7 @@ if(errorStatus==true)
                             attachmentList.add(inputData);
                            // dbHelper.insertDataSetMaster(inputData);
 
-                            Toast.makeText(this, "BYTE ARRAY " + inputData, Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(this, "BYTE ARRAY " + inputData, Toast.LENGTH_SHORT).show();
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
@@ -1136,9 +1140,10 @@ if(errorStatus==true)
                 attachmentList.add(inputData);
                // dbHelper.insertDataSetMaster(inputData);
 
-                selectedFilesCountTextview.setText(" 1 file selected");
+                    selectedFilesCountTextview.setText("1 file selected");
 
-                Toast.makeText(this, "SINGLE BYTE ARRAY " + inputData, Toast.LENGTH_SHORT).show();
+
+              //  Toast.makeText(this, "SINGLE BYTE ARRAY " + inputData, Toast.LENGTH_SHORT).show();
             } catch (IOException e) {
                 e.printStackTrace();
             }

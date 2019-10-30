@@ -113,7 +113,7 @@ public class DemoL3DataPushNetworkOperation implements DemoL3DataPushNetworkOper
                               permanentdemol3serialid = cursor.getString(cursor.getColumnIndex(DemoL3Pojo.DEMOL3_COLUMN_PERMANENT_DEMOL3_SERIAL_ID));;
 
 
-                            Toast.makeText(DemoL3Activity.getInstance(), "DATE OF INTERM "+dateofinterim +"INTERIM  "+interim, Toast.LENGTH_SHORT).show();
+                          //  Toast.makeText(DemoL3Activity.getInstance(), "DATE OF INTERM "+dateofinterim +"INTERIM  "+interim, Toast.LENGTH_SHORT).show();
 
                             object.put("tempDemoL3Id",demol3SerialId );
                             object.put("dateOfActivity", dateOfActivity+" 00:00:00");
@@ -419,7 +419,7 @@ public class DemoL3DataPushNetworkOperation implements DemoL3DataPushNetworkOper
                                 {
                                     e.printStackTrace();
                                 }
-                                String dateOfActivity = demoL3Object.getString("dateOfActivity");
+                            /*    String dateOfActivity = demoL3Object.getString("dateOfActivity");
                                 String village = demoL3Object.getString("village");
                                 String createdOn = demoL3Object.getString("createdOn");
                                 String modifyDate = demoL3Object.getString("modifyDate");
@@ -452,7 +452,7 @@ public class DemoL3DataPushNetworkOperation implements DemoL3DataPushNetworkOper
                                 String yield = demoL3Object.getString("yield");
                                 String expenses = demoL3Object.getString("expense");
 
-
+*/
 
 
 
