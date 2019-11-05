@@ -240,6 +240,7 @@ public class DemoL3_InterimResult extends AppCompatActivity
 
 
                 picker.show();
+                dateOfInterimEditText.setEnabled(false);
             }
         });
         //method for pop-up of calender by vinod  on  14/09/2019

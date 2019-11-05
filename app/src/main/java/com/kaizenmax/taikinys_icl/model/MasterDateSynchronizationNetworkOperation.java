@@ -35,8 +35,8 @@ public class MasterDateSynchronizationNetworkOperation implements MasterDateSync
 
             // String url = "https://tvsfinal.herokuapp.com/faces/rest/service/validateUser";
 
-            String url="https://tvsfinal.herokuapp.com/rest/service/userFA_MasterSync";
-
+            //String url="https://tvsfinal.herokuapp.com/rest/service/userFA_MasterSync";
+            String url="https://taikinys.kaizenmax.com/rest/service/userFA_MasterSync" ;
 
 
             final JSONObject postparams = new JSONObject();

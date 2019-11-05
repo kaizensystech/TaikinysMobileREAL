@@ -148,7 +148,7 @@ public class IndividualFarmerContactActivityPresenter implements IndividualFarme
 
 
             ArrayList<Integer> uploadedIds = new ArrayList<Integer>();
-            String url = "https://tvsfinal.herokuapp.com/rest/service/meeting";
+            String url = "https://taikinys.kaizenmax.com/rest/service/meeting";
             // String url = "https://raghav-rest-api.herokuapp.com/rest/json/raghav/post";
             RequestQueue requestQueue = Volley.newRequestQueue(IndividualFarmerContactMainActivity.getInstance());
 

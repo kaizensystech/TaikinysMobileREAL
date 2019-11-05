@@ -166,7 +166,7 @@ public class DemoL3ActivityPresenter implements DemoL3ActivityPresenterInterface
 
         List<RetailerDetailsPojo> retailerDetailsPojoList = dbHelper.getRetailerDetailsListForDemoL3(demoL3SerialId);
 
-        return null;
+        return retailerDetailsPojoList;
     }
 
     @Override

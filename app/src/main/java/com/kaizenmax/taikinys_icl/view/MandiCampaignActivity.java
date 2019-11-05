@@ -151,6 +151,8 @@ dateOfActivityEditText.setOnClickListener(new View.OnClickListener() {
 
 
         picker.show();
+        dateOfActivityEditText.setFocusable(false);
+
     }
 });
 

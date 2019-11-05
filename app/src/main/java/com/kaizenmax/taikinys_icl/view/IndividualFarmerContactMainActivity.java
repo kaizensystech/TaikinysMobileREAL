@@ -238,6 +238,8 @@ public class IndividualFarmerContactMainActivity extends AppCompatActivity
 
 
                 picker.show();
+
+                dateOfActivityEditText.setFocusable(false);
             }
         });
 
@@ -246,6 +248,7 @@ public class IndividualFarmerContactMainActivity extends AppCompatActivity
 
 //ADDING CALENDER ON DATE OF ACTIVITY ENDS
 
+        getDataSetEntriesMethod(); //method to get entries of all dataset table
 
 
         // dbHelper = new MobileDatabase(this);
@@ -326,7 +329,6 @@ public class IndividualFarmerContactMainActivity extends AppCompatActivity
         //localTestingFaMaster();
 
 
-        getDataSetEntriesMethod(); //method to get entries of all dataset table
 
 
         // testingLocalRetrieval();//TEST method to retrieve local entries
@@ -731,9 +733,10 @@ public class IndividualFarmerContactMainActivity extends AppCompatActivity
             v.findViewById(R.id.deleteButton).setVisibility(View.GONE);
         }
 
+       String awsProdKey= "E92M75GV9kUQnQQNURUWg4r9hge5" ;
+        String herokuTestingTaikinysKey ="E92M75GV9kUQnNURUWg4r9hge5" ;
 
-
-        String url2="https://tvsfinal.herokuapp.com/rest/service/dataSetMaster/E92M75GV9kUQnNURUWg4r9hge5";
+        String url2="https://taikinys.kaizenmax.com/rest/service/dataSetMaster/E92M75GV9kUQnQQNURUWg4r9hge5";
         requestQueue = Volley.newRequestQueue(this);
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(
                 Request.Method.GET,
@@ -1025,7 +1028,10 @@ public class IndividualFarmerContactMainActivity extends AppCompatActivity
 
 
 
-        String url2="https://tvsfinal.herokuapp.com/rest/service/dataSetMaster/E92M75GV9kUQnNURUWg4r9hge5";
+       // String url2="https://tvsfinal.herokuapp.com/rest/service/dataSetMaster/E92M75GV9kUQnNURUWg4r9hge5";
+       String url2="https://taikinys.kaizenmax.com/rest/service/dataSetMaster/E92M75GV9kUQnQQNURUWg4r9hge5";
+
+
         requestQueue = Volley.newRequestQueue(this);
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(
                 Request.Method.GET,

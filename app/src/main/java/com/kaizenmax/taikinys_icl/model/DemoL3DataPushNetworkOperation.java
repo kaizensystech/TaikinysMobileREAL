@@ -36,7 +36,7 @@ public class DemoL3DataPushNetworkOperation implements DemoL3DataPushNetworkOper
 
 
             ArrayList<String> uploadedIds = new ArrayList<String>();
-            String url = "https://tvsfinal.herokuapp.com/rest/service/saveDemoL3Details";
+            String url = "https://taikinys.kaizenmax.com/rest/service/saveDemoL3Details";
             // String url = "https://raghav-rest-api.herokuapp.com/rest/json/raghav/post";
 
             RequestQueue requestQueue = Volley.newRequestQueue(IndividualFarmerContactMainActivity.getInstance());
@@ -336,7 +336,9 @@ public class DemoL3DataPushNetworkOperation implements DemoL3DataPushNetworkOper
 
         //String url21="https://tvsfinal.herokuapp.com/rest/service/dataSetMaster/E92M75GV9kUQnNURUWg4r9hge5";
 
-        String url2 = "https://tvsfinal.herokuapp.com/rest/service/sendDemoL3detailsFA_Wise/"+mobileNumber;
+        //String url2 = "https://tvsfinal.herokuapp.com/rest/service/sendDemoL3detailsFA_Wise/"+mobileNumber;
+
+        String url2 = "https://taikinys.kaizenmax.com/rest/service/sendDemoL3detailsFA_Wise/"+mobileNumber;
 
         requestQueue = Volley.newRequestQueue(IndividualFarmerContactMainActivity.getInstance());
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(

@@ -273,6 +273,7 @@ Button saveButton;
 
 
                 picker.show();
+                dateOfExecutionEditText.setEnabled(false);
             }
         });
         //method for pop-up of calender by vinod  on  14/09/2019

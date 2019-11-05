@@ -174,6 +174,8 @@ int PICK_IMAGE_MULTIPLE = 1;
 
 
                 picker.show();
+                dateOfActivityEditText.setFocusable(false);
+
             }
         });
 
@@ -786,6 +788,8 @@ retailerMobile = findViewById(R.id.retailerMobile);
 
 
     public void setAdapterOnFirmName(final View v) {
+
+
         List<String> firmNameList = new ArrayList<String>();
 
         // firmNameList = dbHelper.getFirmNameList(); //to be removed
@@ -929,6 +933,7 @@ if(errorStatus==true)
 
 
         viewList.add(rowView);
+
 
         setAdapterOnFirmName(rowView);
         //  Toast.makeText(IndividualFarmerContactActivity.getInstance(), "FIRM NAME "+rowView.findViewById(R.id.farmerName), Toast.LENGTH_SHORT).show();

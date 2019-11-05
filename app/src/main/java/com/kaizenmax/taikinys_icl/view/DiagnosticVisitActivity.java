@@ -175,6 +175,8 @@ public class DiagnosticVisitActivity extends AppCompatActivity
 
 
                 picker.show();
+                dateOfActivityEditText.setFocusable(false);
+
             }
         });
 

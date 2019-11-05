@@ -181,6 +181,8 @@ public class FieldDayActivity extends AppCompatActivity
 
 
                 picker.show();
+                dateOfActivityEditText.setFocusable(false);
+
             }
         });
 

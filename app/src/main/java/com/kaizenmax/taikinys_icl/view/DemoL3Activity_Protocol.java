@@ -162,6 +162,7 @@ instance = this ;
 
 
                 picker.show();
+                dateOfProtocolEditText.setFocusable(false);
             }
         });
 

@@ -36,7 +36,8 @@ public class OtpVerificationNetworkOperation implements OtpVerificationActivityN
 
         // String url = "https://tvsfinal.herokuapp.com/faces/rest/service/validateUser";
 
-        String url="https://tvsfinal.herokuapp.com/rest/service/userFA_Master";
+        //String url="https://tvsfinal.herokuapp.com/rest/service/userFA_Master";
+        String url="https://taikinys.kaizenmax.com/rest/service/userFA_Master";
 
 
 

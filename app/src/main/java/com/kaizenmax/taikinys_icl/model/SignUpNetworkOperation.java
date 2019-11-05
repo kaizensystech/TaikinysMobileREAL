@@ -31,7 +31,9 @@ WelcomeActivityPresenterInterface welcomeActivityPresenterInterface;
 
         // String url = "https://tvsfinal.herokuapp.com/faces/rest/service/validateUser";
 
-        String url="https://tvsfinal.herokuapp.com/rest/service/validateUser";
+
+     //String url = "https://tvsfinal.herokuapp.com/rest/service/validateUser";
+        String url="https://taikinys.kaizenmax.com/rest/service/validateUser";
 
         final JSONObject postparams = new JSONObject();
         try {

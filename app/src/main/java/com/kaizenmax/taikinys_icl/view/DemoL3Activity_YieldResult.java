@@ -254,6 +254,7 @@ public class DemoL3Activity_YieldResult extends AppCompatActivity
 
 
                 picker.show();
+                dateOfYieldEditText.setEnabled(false);
             }
         });
 

@@ -222,6 +222,8 @@ public class DemoL3Activity extends AppCompatActivity
 
 
                 picker.show();
+                dateOfActivityEditText.setFocusable(false);
+
             }
         });
 
@@ -345,38 +347,65 @@ public class DemoL3Activity extends AppCompatActivity
 
 
 
-                              /*  List<RetailerDetailsPojo> retailerDetailsPojoList = demoL3ActivityPresenterInterface.getRetailerDetailsListForDemoL3(demoL3SerialId);
-                                viewList = new ArrayList<View>();
+                              List<RetailerDetailsPojo> retailerDetailsPojoList = demoL3ActivityPresenterInterface.getRetailerDetailsListForDemoL3(demoL3SerialId);
+                              //  viewList = new ArrayList<View>();
                                  for (int k=0; k<retailerDetailsPojoList.size();k++)
                                  {
-
-
-
+                                     if(retailerDetailsPojoList.size()!=1 && retailerDetailsPojoList.size()!=0)
                                      addRetailerRow(null);
-
 
                                  }
 
 
-                                 for (int h=0; h<viewList.size();h++)
+                            //    Toast.makeText(DemoL3Activity.getInstance(), "VIEWLIST SIZE "+viewList.size(), Toast.LENGTH_SHORT).show();
+                                for (int h=0; h<viewList.size();h++)
                                  {
-                                     EditText propName = viewList.get(h).findViewById(R.id.propName);
-                                     EditText firmName = viewList.get(h).findViewById(R.id.firmName);
-                                     EditText retailerMobile = viewList.get(h).findViewById(R.id.retailerMobile);
+                                     if(retailerDetailsPojoList.size()!=0 ) {
+                                         EditText propName = viewList.get(h).findViewById(R.id.propName);
+                                         EditText firmName = viewList.get(h).findViewById(R.id.firmName);
+                                         EditText retailerMobile = viewList.get(h).findViewById(R.id.retailerMobile);
+                                         Button removeRowBtn = viewList.get(h).findViewById(R.id.deleteButton);
+
+
+                                         RetailerDetailsPojo retailerDetailsPojo = retailerDetailsPojoList.get(h);
+
+                                         propName.setText(retailerDetailsPojo.getPropName());
+                                         propName.setEnabled(false);
+                                         propName.setFocusable(false);
+                                         firmName.setText(retailerDetailsPojo.getFirmName());
+                                         firmName.setEnabled(false);
+                                         retailerMobile.setText(retailerDetailsPojo.getRetailerMobile());
+                                         retailerMobile.setEnabled(false);
+
+                                         removeRowBtn.setEnabled(false);
+
+                                     }
+
+                                     else
+                                     {
+                                         EditText propName = viewList.get(h).findViewById(R.id.propName);
+                                         EditText firmName = viewList.get(h).findViewById(R.id.firmName);
+                                         EditText retailerMobile = viewList.get(h).findViewById(R.id.retailerMobile);
+                                         Button removeRowBtn = viewList.get(h).findViewById(R.id.deleteButton);
+
+
+                                        // RetailerDetailsPojo retailerDetailsPojo = retailerDetailsPojoList.get(h);
+
+                                         //propName.setText(retailerDetailsPojo.getPropName());
+                                         propName.setEnabled(false);
+                                         propName.setFocusable(false);
+                                         //firmName.setText(retailerDetailsPojo.getFirmName());
+                                         firmName.setEnabled(false);
+                                         //retailerMobile.setText(retailerDetailsPojo.getRetailerMobile());
+                                         retailerMobile.setEnabled(false);
+
+                                         removeRowBtn.setEnabled(false);
 
 
 
+                                     }
 
-                                     RetailerDetailsPojo retailerDetailsPojo = retailerDetailsPojoList.get(h);
-
-                                     propName.setText(retailerDetailsPojo.getPropName());
-                                     firmName.setText(retailerDetailsPojo.getFirmName());
-                                     firmName.setEnabled(false);
-                                     retailerMobile.setText(retailerDetailsPojo.getRetailerMobile());
-
-
-
-                                 } */
+                                 }
 
 
 
@@ -926,7 +955,7 @@ public class DemoL3Activity extends AppCompatActivity
 
         viewList.add(rowView);
 
-        //setAdapterOnFirmName(rowView);
+        setAdapterOnFirmName(rowView);
         //  Toast.makeText(IndividualFarmerContactActivity.getInstance(), "FIRM NAME "+rowView.findViewById(R.id.farmerName), Toast.LENGTH_SHORT).show();
 
 
@@ -957,6 +986,7 @@ public class DemoL3Activity extends AppCompatActivity
     }
 
     public void setAdapterOnFirmName(final View v) {
+
         List<String> firmNameList = new ArrayList<String>();
 
         // firmNameList = dbHelper.getFirmNameList(); //to be removed

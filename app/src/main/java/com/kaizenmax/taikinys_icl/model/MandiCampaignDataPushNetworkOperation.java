@@ -32,7 +32,7 @@ public class MandiCampaignDataPushNetworkOperation implements MandiCampaignDataP
 
 
             ArrayList<Integer> uploadedIds = new ArrayList<Integer>();
-            String url = "https://tvsfinal.herokuapp.com/rest/service/mandiCampaign";
+            String url = "https://taikinys.kaizenmax.com/rest/service/mandiCampaign";
             // String url = "https://raghav-rest-api.herokuapp.com/rest/json/raghav/post";
 
             RequestQueue requestQueue = Volley.newRequestQueue(MandiCampaignActivity.getInstance());
