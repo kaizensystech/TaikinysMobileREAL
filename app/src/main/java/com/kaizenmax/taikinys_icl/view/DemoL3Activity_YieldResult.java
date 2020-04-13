@@ -712,6 +712,13 @@ public class DemoL3Activity_YieldResult extends AppCompatActivity
 
         }
 
+        else if (id == R.id.pastRecord) {
+            Intent intent = new Intent(DemoL3Activity_YieldResult.this, PastRecordActivity.class);
+            //pgsBar.setVisibility(View.GONE);
+            startActivity(intent);
+            finish();
+        }
+
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;

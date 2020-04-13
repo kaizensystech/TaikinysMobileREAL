@@ -617,6 +617,8 @@ Log.d("CATEGORYNAME",categoryName);
         return res;
     }
 
+
+
 public Cursor getPromoEntriesToBeUploaded()
 {
     SQLiteDatabase db = this.getReadableDatabase();
@@ -1967,6 +1969,8 @@ for(int i=0 ; i<farmerDetailsPojoList.size();i++) {
     }
 
 
+
+
     public Cursor getMandiCampaignEntriesToBeUploaded() {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor res = db.rawQuery("select * from "+MandiCampaignPojo.MANDICAMPAIGN_TABLE_NAME +" where "+
@@ -2791,6 +2795,26 @@ return farmerDetailsPojo;
 
      //   db.close();
 
+    }
+
+    public Cursor getAllPromoEntriesPastRecord() {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor res = db.rawQuery("Select * from " +PromoFarmerMeetingPojo.PROMOFARMERMEETING_TABLE_NAME +
+                " where "+PromoFarmerMeetingPojo.PROMOFARMERMEETING_COLUMN_DATE_OF_ACTIVITY,null);//"select * from "+PromoFarmerMeetingPojo.PROMOFARMERMEETING_TABLE_NAME + "where "+PromoFarmerMeetingPojo.PROMOFARMERMEETING_COLUMN_DATE_OF_ACTIVITY +" >= DATE_SUB(CURDATE(), INTERVAL 10 DAY) ", null );
+        return res;
+    }
+
+    public Cursor getAllEntriesFromDemoL3PastRecord() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor res = db.rawQuery( "SELECT * FROM " + DemoL3Pojo.DEMOL3_TABLE_NAME, null );
+        return res;
+    }
+
+    public Cursor getAllEntriesMandiCampaignPastRecord() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor res = db.rawQuery("select * from "+MandiCampaignPojo.MANDICAMPAIGN_TABLE_NAME,null);
+        return res;
     }
 }
 

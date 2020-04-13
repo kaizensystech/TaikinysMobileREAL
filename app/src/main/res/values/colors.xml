@@ -13,6 +13,7 @@
     <color name="green">#6BC259</color>
     <color name="lightgrey">#D3D3D3</color>
     <color name="infoblue">#00BFFF</color>
-
+    <color name="year">#999999</color>
+    <color name="title">#222222</color>
 
 </resources>

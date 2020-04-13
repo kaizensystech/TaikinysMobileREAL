@@ -634,6 +634,12 @@ dateOfActivityEditText.setOnClickListener(new View.OnClickListener() {
             finish();
         }
 
+        else if (id == R.id.pastRecord) {
+            Intent intent = new Intent(MandiCampaignActivity.this, PastRecordActivity.class);
+            //pgsBar.setVisibility(View.GONE);
+            startActivity(intent);
+            finish();
+        }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

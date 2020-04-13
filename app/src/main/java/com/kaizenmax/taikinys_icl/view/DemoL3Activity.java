@@ -934,6 +934,13 @@ public class DemoL3Activity extends AppCompatActivity
             finish();
         }
 
+        else if (id == R.id.pastRecord) {
+            Intent intent = new Intent(DemoL3Activity.this, PastRecordActivity.class);
+            //pgsBar.setVisibility(View.GONE);
+            startActivity(intent);
+            finish();
+        }
+
 
 
 

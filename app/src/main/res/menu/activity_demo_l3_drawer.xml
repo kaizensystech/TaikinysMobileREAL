@@ -35,6 +35,11 @@
 
         </item>
 
+        <item
+            android:id="@+id/pastRecord"
+            android:title="Past Records">
+        </item>
+
 
     </group>
 

@@ -18,6 +18,7 @@ import com.kaizenmax.taikinys_icl.pojo.PromoFarmerMeetingPojo;
 import com.kaizenmax.taikinys_icl.pojo.RetailerDetailsPojo;
 import com.kaizenmax.taikinys_icl.util.SharedPreferenceUtil;
 import com.kaizenmax.taikinys_icl.view.IndividualFarmerContactMainActivity;
+import com.kaizenmax.taikinys_icl.view.PastRecordActivity;
 
 
 import org.json.JSONArray;
@@ -413,5 +414,9 @@ System.out.println("date hh-"+date);*/
 
 
         }
+    }
+
+    public void test(){
+       // Toast.makeText(PastRecordActivity.getInstance(), "Testing", Toast.LENGTH_SHORT).show();
     }
 }

@@ -147,7 +147,7 @@ public class IndividualFarmerContactMainActivity extends AppCompatActivity
 
 
 
-       //
+        //
 
         viewList=new ArrayList<View>();
         cropCategories=new ArrayList<String>();
@@ -158,7 +158,7 @@ public class IndividualFarmerContactMainActivity extends AppCompatActivity
 
 
 
-       //
+        //
 
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -452,7 +452,7 @@ public class IndividualFarmerContactMainActivity extends AppCompatActivity
 
                         || landAcres_entered.equalsIgnoreCase("")
 
-                        || expenses_entered.equalsIgnoreCase("")
+                        // removed by jyoti, bhavna in guidance of Vinod on 11/13/2019 || expenses_entered.equalsIgnoreCase("")
 
                         || villageName_entered.trim().length()<2
 
@@ -526,10 +526,13 @@ public class IndividualFarmerContactMainActivity extends AppCompatActivity
                         landAcresEditText.setError("Please enter land in acres");//it gives user to info message //use any one //
                     }
 
-                    if (expenses_entered.equalsIgnoreCase("")) {
+                /*    if (expenses_entered.equalsIgnoreCase("")) {
                         //dateOfActivityEditText.setHint("Please enter date of activity");//it gives user to hint
                         expensesEditText.setError("Please enter expenses");//it gives user to info message //use any one //
                     }
+                     // removed by jyoti, bhavna in guidance of Vinod on 11/13/2019
+
+                     */
 
                     if(villageName_entered!=null && !villageName_entered.equals("")    && villageName_entered.trim().length()<2)
                     {
@@ -546,11 +549,11 @@ public class IndividualFarmerContactMainActivity extends AppCompatActivity
                 } else {
 
 
-                //    Toast.makeText(IndividualFarmerContactMainActivity.this, "HELLO", Toast.LENGTH_SHORT).show();
+                    //    Toast.makeText(IndividualFarmerContactMainActivity.this, "HELLO", Toast.LENGTH_SHORT).show();
 
                     for (int i = 0; i < viewList.size(); i++) {
 
-                  //      Toast.makeText(IndividualFarmerContactMainActivity.this, "HII", Toast.LENGTH_SHORT).show();
+                        //      Toast.makeText(IndividualFarmerContactMainActivity.this, "HII", Toast.LENGTH_SHORT).show();
 
                         EditText firmName = (viewList.get(i)).findViewById(R.id.firmName);
                         EditText retailerMobile = (viewList.get(i)).findViewById(R.id.retailerMobile);
@@ -630,7 +633,7 @@ public class IndividualFarmerContactMainActivity extends AppCompatActivity
                         EditText propName = view.findViewById(R.id.propName);
                         EditText retailerMobile = view.findViewById(R.id.retailerMobile);
 
-                    //
+                        //
 
 
 
@@ -733,7 +736,7 @@ public class IndividualFarmerContactMainActivity extends AppCompatActivity
             v.findViewById(R.id.deleteButton).setVisibility(View.GONE);
         }
 
-       String awsProdKey= "E92M75GV9kUQnQQNURUWg4r9hge5" ;
+        String awsProdKey= "E92M75GV9kUQnQQNURUWg4r9hge5" ;
         String herokuTestingTaikinysKey ="E92M75GV9kUQnNURUWg4r9hge5" ;
 
         String url2="https://taikinys.kaizenmax.com/rest/service/dataSetMaster/E92M75GV9kUQnQQNURUWg4r9hge5";
@@ -940,7 +943,7 @@ public class IndividualFarmerContactMainActivity extends AppCompatActivity
         ((ViewGroup) namebar.getParent()).removeView(namebar); */
 
 
-       // Toast.makeText(IndividualFarmerContactMainActivity.getInstance(), "VIEW "+v, Toast.LENGTH_SHORT).show();
+        // Toast.makeText(IndividualFarmerContactMainActivity.getInstance(), "VIEW "+v, Toast.LENGTH_SHORT).show();
 
 
         View namebar = ((View) v.getParent().getParent()).findViewById(R.id.retailerDetails);
@@ -1005,7 +1008,7 @@ public class IndividualFarmerContactMainActivity extends AppCompatActivity
 
     // Sending data to Web services Starts
 
-  //  public  void sendingDataToWebService()
+    //  public  void sendingDataToWebService()
 
 //Sending data to Web services Ends
 
@@ -1028,8 +1031,8 @@ public class IndividualFarmerContactMainActivity extends AppCompatActivity
 
 
 
-       // String url2="https://tvsfinal.herokuapp.com/rest/service/dataSetMaster/E92M75GV9kUQnNURUWg4r9hge5";
-       String url2="https://taikinys.kaizenmax.com/rest/service/dataSetMaster/E92M75GV9kUQnQQNURUWg4r9hge5";
+        // String url2="https://tvsfinal.herokuapp.com/rest/service/dataSetMaster/E92M75GV9kUQnNURUWg4r9hge5";
+        String url2="https://taikinys.kaizenmax.com/rest/service/dataSetMaster/E92M75GV9kUQnQQNURUWg4r9hge5";
 
 
         requestQueue = Volley.newRequestQueue(this);
@@ -1404,6 +1407,13 @@ public class IndividualFarmerContactMainActivity extends AppCompatActivity
 
         else if (id == R.id.demol3_progress) {
             Intent intent = new Intent(IndividualFarmerContactMainActivity.this, DemoL3_InProgressActivity.class);
+            //pgsBar.setVisibility(View.GONE);
+            startActivity(intent);
+            finish();
+        }
+
+        else if (id == R.id.pastRecord) {
+            Intent intent = new Intent(IndividualFarmerContactMainActivity.this, PastRecordActivity.class);
             //pgsBar.setVisibility(View.GONE);
             startActivity(intent);
             finish();

@@ -18,6 +18,14 @@
         <!--        android:networkSecurityConfig="@xml/network_security_config" -->
 
         <activity
+            android:name="com.kaizenmax.taikinys_icl.view.PastRecordActivity"
+            android:label="Past Records"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait">
+
+        </activity>
+
+        <activity
             android:name="com.kaizenmax.taikinys_icl.view.DemoL3_InProgressActivity"
             android:label="@string/title_activity_demo_l3__in_progress"
             android:theme="@style/AppTheme.NoActionBar"

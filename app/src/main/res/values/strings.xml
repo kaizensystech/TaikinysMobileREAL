@@ -12,6 +12,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="ifc">Individual Farmer Contact</string>
+    <string name="pastRecord">Past Records</string>
     <string name="title_activity_bottom_navigation_demo">BottomNavigationDemo</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
@@ -40,6 +41,7 @@
     <string name="title_activity_diagnostic_visit">Diagnostic Visit Activity</string>
     <string name="title_activity_mandi_campaign">Mandi Campaign Activity</string>
     <string name="title_activity_demo_l3">DemoL3 Activity Farmer Details</string>
+    <string name="title_activity_past_record">Past Records</string>
     <string name="demol3formtitle1"><u><b>Farmer Details</b></u></string>
     <string name="title_activity_demo_l3__protocol">DemoL3 Activity </string>
     <string name="title_activity_demo_l3__execution">DemoL3 Activity </string>

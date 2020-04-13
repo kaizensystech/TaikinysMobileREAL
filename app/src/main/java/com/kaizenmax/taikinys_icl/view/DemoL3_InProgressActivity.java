@@ -250,6 +250,13 @@ public class DemoL3_InProgressActivity extends AppCompatActivity
             finish();
         }
 
+        else if (id == R.id.pastRecord) {
+            Intent intent = new Intent(DemoL3_InProgressActivity.this, PastRecordActivity.class);
+            //pgsBar.setVisibility(View.GONE);
+            startActivity(intent);
+            finish();
+        }
+
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

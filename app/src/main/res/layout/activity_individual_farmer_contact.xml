@@ -206,7 +206,7 @@
                     android:inputType="number"
                     android:id="@+id/expenses"
                     android:maxLength="5"
-                    android:hint="Expenses*" />
+                    android:hint="Expenses" />
             </android.support.design.widget.TextInputLayout>
 
         </LinearLayout>

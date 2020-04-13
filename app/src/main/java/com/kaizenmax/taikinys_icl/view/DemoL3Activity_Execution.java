@@ -647,6 +647,13 @@ saveButton.setOnClickListener(new View.OnClickListener() {
             finish();
         }
 
+        else if (id == R.id.pastRecord) {
+            Intent intent = new Intent(DemoL3Activity_Execution.this, PastRecordActivity.class);
+            //pgsBar.setVisibility(View.GONE);
+            startActivity(intent);
+            finish();
+        }
+
 
 
 
